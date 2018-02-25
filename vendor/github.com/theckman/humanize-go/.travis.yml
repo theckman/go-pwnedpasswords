@@ -1,0 +1,11 @@
+language: go
+go:
+- 1.7.4
+sudo: false
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+before_install: go get -u github.com/Masterminds/glide
+install: glide install
+script: go test -v $(glide novendor) -check.vv
