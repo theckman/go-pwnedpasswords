@@ -1,0 +1,4 @@
+package: github.com/theckman/humanize-go
+import: []
+testImport:
+- package: gopkg.in/check.v1
