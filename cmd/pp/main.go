@@ -18,19 +18,11 @@ import (
 )
 
 var (
-	help                      bool
-	versionShort, versionLong bool
+	help bool
 )
-
-var usage = `
-  --version
-        print version and exit
-  -V    print version and exit`
 
 func initFlags() {
 	flag.BoolVar(&help, "h", false, "print help and exit")
-	flag.BoolVar(&versionShort, "V", false, "print version and exit")
-	flag.BoolVar(&versionLong, "-version", false, "print version and exit")
 	flag.Parse()
 }
 
@@ -74,7 +66,7 @@ func main() {
 }
 
 func printHelp() {
-	fmt.Printf("Usage of %s\n%s\n\n", os.Args[0], usage)
+	fmt.Printf("Usage of %s\n\n", os.Args[0])
 	fmt.Print("PwnedPasswords asks for your password over stdin, and checks it against the PwnedPasswords API\n\n")
 	fmt.Print("This works by SHA-1 hashing your password, and sending the first five bytes of the hex-encoded hash.\n")
 	fmt.Print("The API returns a list of hashes that start with the same prefix, and we then compare hashes locally.\n\n")
