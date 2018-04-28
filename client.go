@@ -41,7 +41,7 @@ type hashCount struct {
 const DefaultURL = "https://api.pwnedpasswords.com/range/"
 
 // Version is the package version.
-const Version = "1.0.1"
+const Version = "1.0.2"
 
 const userAgent = "go-pwnedpasswords/" + Version + " (https://github.com/theckman/go-pwnedpasswords) Go-http-client/1.1"
 
