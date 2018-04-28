@@ -18,12 +18,29 @@
  match. This prevents the password, hashed or not, from leaving the local
  system.
  
+ In effect, this allows you to confirm if your password is seen in one of the
+ many database dumps where passwords were obtained. If your password is not on
+ the list, it does not mean that it is safe or hasn't been compromised. Always
+ remember to never share passwords between different sites or services, as the
+ compromise of one can lead to the compromise of all of your accounts.
+ 
 ## License
 This code is released under the MIT License. Please see the
 [LICENSE](https://github.com/theckman/go-pwnedpasswords/blob/master/LICENSE) for the
 full content of the license.
 
+## Building the Binary
+If you have the Go toolchain installed, you can use the following command to
+install the pwnedpasswords command line client (`pp`):
+
+```Shell
+go get github.com/theckman/go-pwnedpasswords/cmd/pp
+```
+
 ## Usage
+If you plan to use this package as a client library in Go, here is a quick
+example of how to use it:
+
 ```Go
 client, err := pwnedpasswords.New(pwnedpasswords.DefaultURL)
 // handle error
